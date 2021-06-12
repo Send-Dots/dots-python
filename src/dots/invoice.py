@@ -6,10 +6,8 @@ from dots import token
 
 class Invoice():
 
-    def __init__(self):
-        pass
-
-    def create(self, amount, expires_in, items, breakdown, requested_information):
+    @classmethod
+    def create(cls, amount, expires_in, items, breakdown, requested_information):
         
         json = {
             'amount': amount,
@@ -31,8 +29,8 @@ class Invoice():
         else:
             response.raise_for_status()
 
-
-    def get(self, invoice_id):
+    @classmethod
+    def get(cls, invoice_id):
         
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
