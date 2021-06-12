@@ -19,7 +19,7 @@ python setup.py install
 ```
 
 ## Usage
-The library needs to be configured with your `client_id` and `api_key` which can be found in the [https://www.senddots.com/developer](Developer Dashboard)
+The library needs to be configured with your `client_id` and `api_key` which can be found in the ["https://www.senddots.com/developer"](Developer Dashboard)
 
 ```
 import dots
