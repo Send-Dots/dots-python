@@ -4,7 +4,7 @@ The Dots Python library provides convenient access to the Dots API from applicat
 
 ## Documentation
 
-See the [https://docs.senddots.com](API docs).
+See the [API docs](https://docs.senddots.com).
 
 ## Installation
 
@@ -19,7 +19,7 @@ python setup.py install
 ```
 
 ## Usage
-The library needs to be configured with your `client_id` and `api_key` which can be found in the [https://www.senddots.com/developer](Developer Dashboard)
+The library needs to be configured with your `client_id` and `api_key` which can be found in the [Developer Dashboard](https://www.senddots.com/developer)
 
 ```
 import dots
