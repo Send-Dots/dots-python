@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: dots-python
+Version: 0.1.0
+Summary: Add dots checkout to your python app
+Home-page: https://github.com/Send-Dots/dots-python
+Author: Dots.
+Author-email: info@senddots.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Send-Dots/dots-python/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Dots SDK for Python
+
+The Dots Python library provides convenient access to the Dots API from applications written in the Python language.
+
+## Documentation
+
+See the [API docs](https://docs.senddots.com).
+
+## Installation
+
+To install the package run:
+```
+pip install --upgrade dots-python
+```
+
+Install from source with:
+```
+python setup.py install
+```
+
+## Usage
+
+The library needs to be configured with your `client_id` and `api_key` which can be found in the [Developer Dashboard](https://www.senddots.com/developer)
+
+```
+import dots
+dots.client_id = 'pk_dev_...'
+dots.api_key = 'sk_dev_...'
+
+invoice = dots.Invoice.create(...)
+```
+
+

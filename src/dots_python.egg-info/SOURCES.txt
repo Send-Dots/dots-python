@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/dots/__init__.py
+src/dots/invoice.py
+src/dots/token.py
+src/dots_python.egg-info/PKG-INFO
+src/dots_python.egg-info/SOURCES.txt
+src/dots_python.egg-info/dependency_links.txt
+src/dots_python.egg-info/top_level.txt
