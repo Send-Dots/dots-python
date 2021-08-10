@@ -131,7 +131,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# pytype static type analyzer
+# pytype static type analyzernpx @docusaurus/init@latest init my-website classic
 .pytype/
 
 # Cython debug symbols
