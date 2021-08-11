@@ -31,7 +31,7 @@ class User():
         data = response.json()
 
         if (data['success']):
-            return data['data']['user_id']
+            return data['verification_id']
         else:
             response.raise_for_status()
 
@@ -52,14 +52,14 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def send_verification_token(user_id):
+    def send_verification_token(verification_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
         response = requests.post(
-            dots.api_base + '/users/send_verification_token', json={'user_id': user_id}, headers=headers)
+            dots.api_base + '/users/send_verification_token', json={'verification_id': verification_id}, headers=headers)
         data = response.json()
 
         if data['success']:
@@ -69,18 +69,18 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def verify_user(user_id, verification_token):
+    def verify_user(verification_id, verification_token):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
         response = requests.post(
-            dots.api_base + '/users/verify_user', json={'user_id': user_id, verification_token: verification_token}, headers=headers)
+            dots.api_base + '/users/verify_user', json={'verification_id': verification_id, verification_token: verification_token}, headers=headers)
         data = response.json()
 
         if data['success']:
-            return True
+            return data['user']['id']
         else:
             return False
 
