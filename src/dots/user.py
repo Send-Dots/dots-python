@@ -137,14 +137,18 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def get_transactions(user_id):
+    def get_transactions(user_id, page=None):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
+        query = ''
+        if page is not None:
+            query = '?page=' + str(page)
+
         response = requests.get(
-            dots.api_base + '/transactions/get/user/' + user_id, headers=headers)
+            dots.api_base + '/transactions/get/user/' + user_id + query, headers=headers)
         data = response.json()
 
         if data['success']:
