@@ -8,7 +8,7 @@ from dots import token
 class User():
 
     @classmethod
-    def create(email, country_code, phone_number, first_name, last_name, username=None):
+    def create(cls, email, country_code, phone_number, first_name, last_name, username=None):
 
         json = {
             'email': email,
@@ -36,7 +36,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def get(user_id):
+    def get(cls, user_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -52,7 +52,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def send_verification_token(verification_id):
+    def send_verification_token(cls, verification_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -69,7 +69,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def verify_user(verification_id, verification_token):
+    def verify_user(cls, verification_id, verification_token):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -85,7 +85,7 @@ class User():
             return False
 
     @classmethod
-    def get_wallet(user_id):
+    def get_wallet(cls, user_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -101,7 +101,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def generate_refill_link(user_id):
+    def generate_refill_link(cls, user_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -119,7 +119,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def generate_payout_link(user_id):
+    def generate_payout_link(cls, user_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -137,7 +137,7 @@ class User():
             response.raise_for_status()
 
     @classmethod
-    def get_transactions(user_id, page=None):
+    def get_transactions(cls, user_id, page=None):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()

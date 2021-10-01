@@ -8,7 +8,7 @@ from dots import token
 class Transaction():
 
     @classmethod
-    def create(user_id, amount, reciept=None, breakdown=None, notes=None, allow_debit=False):
+    def create(cls, user_id, amount, reciept=None, breakdown=None, notes=None, allow_debit=False):
 
         json = {
             'user_id': user_id,
@@ -33,7 +33,7 @@ class Transaction():
             raise Exception(data['message'])
 
     @classmethod
-    def get(transaction_id):
+    def get(cls, transaction_id):
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
