@@ -8,12 +8,12 @@ from dots import token
 class Transaction():
 
     @classmethod
-    def create(cls, user_id, amount, reciept=None, breakdown=None, notes=None, allow_debit=False):
+    def create(cls, user_id, amount, receipt=None, breakdown=None, notes=None, allow_debit=False):
 
         json = {
             'user_id': user_id,
             'amount': amount,
-            'reciept': reciept,
+            'receipt': receipt,
             'breakdown': breakdown,
             'notes': notes,
             'allow_debit': allow_debit
