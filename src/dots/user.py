@@ -76,7 +76,7 @@ class User():
         }
 
         response = requests.post(
-            dots.api_base + '/users/verify_user', json={'verification_id': verification_id, verification_token: verification_token}, headers=headers)
+            dots.api_base + '/users/verify_user', json={'verification_id': verification_id, 'verification_token': verification_token}, headers=headers)
         data = response.json()
 
         if data['success']:
