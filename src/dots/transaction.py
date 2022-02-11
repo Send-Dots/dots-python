@@ -23,7 +23,7 @@ class Transaction():
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
-        response = requests.post(
+        response = dots._session.post(
             dots.api_base + '/transactions/create', json=json, headers=headers)
         data = response.json()
 
@@ -39,7 +39,7 @@ class Transaction():
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
-        response = requests.get(
+        response = dots._session.get(
             dots.api_base + '/transactions/get/transaction/' + transaction_id, headers=headers)
         data = response.json()
 

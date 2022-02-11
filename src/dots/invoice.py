@@ -29,7 +29,7 @@ class Invoice():
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
-        response = requests.post(dots.api_base + '/invoice/create', json=json, headers=headers)
+        response = dots._session.post(dots.api_base + '/invoice/create', json=json, headers=headers)
 
         data = response.json()
 
@@ -45,7 +45,7 @@ class Invoice():
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
-        response = requests.get(dots.api_base + '/invoice/get/' + invoice_id, headers=headers)
+        response = dots._session.get(dots.api_base + '/invoice/get/' + invoice_id, headers=headers)
         data = response.json()
 
         if data['success']:
