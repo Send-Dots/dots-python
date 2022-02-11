@@ -1,6 +1,3 @@
-import base64
-import requests
-
 import dots
 from dots import token
 
@@ -22,8 +19,7 @@ class PayoutLink():
             'Authorization': 'Basic ' + token.get_auth_token()
         }
 
-        response = requests.post(
-            dots.api_base + '/payouts/create_payout_link', json=json, headers=headers)
+        response = dots._session.post(dots.api_base + '/payouts/create_payout_link', json=json, headers=headers)
 
         data = response.json()
 
