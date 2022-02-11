@@ -9,3 +9,4 @@ _session = requests.Session()
 from dots.invoice import Invoice
 from dots.transaction import Transaction
 from dots.user import User
+from dots.payout_link import PayoutLink

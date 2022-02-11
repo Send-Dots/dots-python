@@ -4,26 +4,30 @@ import requests
 import dots
 from dots import token
 
+
 class Invoice():
 
     @classmethod
-    def create(cls, amount, expires_in=None, items=None, breakdown=None, requested_information=None):
-        
+    def create(cls, amount, expires_in=None, items=None, breakdown=None, requested_information=None, metadata=None):
+
         json = {
             'amount': amount,
         }
 
         if expires_in is not None:
             json['expires_in'] = expires_in
-        
+
         if items is not None:
             json['items'] = items
-        
+
         if breakdown is not None:
             json['breakdown'] = breakdown
-        
+
         if requested_information is not None:
             json['requested_information'] = requested_information
+
+        if metadata is not None:
+            json['metadata'] = metadata
 
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
@@ -40,7 +44,7 @@ class Invoice():
 
     @classmethod
     def get(cls, invoice_id):
-        
+
         headers = {
             'Authorization': 'Basic ' + token.get_auth_token()
         }
