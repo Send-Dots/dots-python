@@ -1,6 +1,3 @@
-import base64
-import requests
-
 import dots
 from dots import token
 

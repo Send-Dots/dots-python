@@ -1,4 +1,3 @@
-from turtle import dot
 import dots
 
 class PayoutLink():
