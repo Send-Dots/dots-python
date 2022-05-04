@@ -34,6 +34,7 @@ class Invoice():
         }
 
         response = dots._session.post(dots.api_base + '/invoice/create', json=json, headers=headers)
+        response.raise_for_status()
 
         data = response.json()
 
@@ -50,6 +51,8 @@ class Invoice():
         }
 
         response = dots._session.get(dots.api_base + '/invoice/get/' + invoice_id, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:

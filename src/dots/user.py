@@ -27,6 +27,7 @@ class User():
 
         response = dots._session.post(
             dots.api_base + '/users/create', json=json, headers=headers)
+        response.raise_for_status()
 
         data = response.json()
 
@@ -44,6 +45,8 @@ class User():
 
         response = dots._session.get(
             dots.api_base + '/users/get/' + user_id, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:
@@ -60,6 +63,8 @@ class User():
 
         response = dots._session.post(
             dots.api_base + '/users/send_verification_token', json={'verification_id': verification_id}, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:
@@ -77,6 +82,8 @@ class User():
 
         response = dots._session.post(
             dots.api_base + '/users/verify_user', json={'verification_id': verification_id, 'verification_token': verification_token}, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:
@@ -93,6 +100,8 @@ class User():
 
         response = dots._session.get(
             dots.api_base + '/users/wallet/get/' + user_id, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:
@@ -109,6 +118,8 @@ class User():
 
         response = dots._session.post(
             dots.api_base + '/users/wallet/refill', json={'user_id': user_id}, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success'] == True:
@@ -127,6 +138,8 @@ class User():
 
         response = dots._session.post(
             dots.api_base + '/users/wallet/payout', json={'user_id': user_id}, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success'] == True:
@@ -149,6 +162,8 @@ class User():
 
         response = dots._session.get(
             dots.api_base + '/transactions/get/user/' + user_id + query, headers=headers)
+        response.raise_for_status()
+
         data = response.json()
 
         if data['success']:

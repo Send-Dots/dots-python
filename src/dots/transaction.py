@@ -25,6 +25,7 @@ class Transaction():
 
         response = dots._session.post(
             dots.api_base + '/transactions/create', json=json, headers=headers)
+        response.raise_for_status()
         data = response.json()
 
         if data['success']:
@@ -41,6 +42,7 @@ class Transaction():
 
         response = dots._session.get(
             dots.api_base + '/transactions/get/transaction/' + transaction_id, headers=headers)
+        response.raise_for_status()
         data = response.json()
 
         if data['success']:
