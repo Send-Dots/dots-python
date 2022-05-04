@@ -1,11 +1,10 @@
+from turtle import dot
 import dots
-from dots import token
-
 
 class PayoutLink():
 
     @classmethod
-    def create(cls, amount, delivery, payee):
+    def create(cls, amount, delivery, payee=None):
 
         json = {
             'amount': amount,
@@ -15,11 +14,7 @@ class PayoutLink():
         if payee is not None:
             json['payee'] = payee
 
-        headers = {
-            'Authorization': 'Basic ' + token.get_auth_token()
-        }
-
-        response = dots._session.post(dots.api_base + '/payouts/create_payout_link', json=json, headers=headers)
+        response = dots._session.post(dots.api_base + '/payouts/create_payout_link', json=json, auth=(dots.client_id, dots.api_key))
 
         data = response.json()
 
