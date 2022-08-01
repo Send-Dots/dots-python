@@ -2,18 +2,22 @@
 
 The Dots Python library provides convenient access to the Dots API from applications written in the Python language.
 
+[More Info](https://dots.dev)
+
 ## Documentation
 
-See the [API docs](https://docs.senddots.com).
+See the [API docs](https://docs.dots.dev).
 
 ## Installation
 
 To install the package run:
+
 ```
 pip install --upgrade dots-python
 ```
 
 Install from source with:
+
 ```
 python setup.py install
 ```
